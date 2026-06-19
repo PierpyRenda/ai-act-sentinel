@@ -82,8 +82,12 @@ def extract_ai_system_description(text: str) -> str:
 def analyze_pdf(pdf_path: str) -> dict:
     """
     Full pipeline: extract text from PDF, return structured content for classifier.
+    Returns {"error": ...} on failure instead of raising.
     """
-    raw_text = extract_text_from_pdf(pdf_path)
+    try:
+        raw_text = extract_text_from_pdf(pdf_path)
+    except (FileNotFoundError, ImportError, Exception) as e:
+        return {"error": str(e), "source": pdf_path}
     description = extract_ai_system_description(raw_text)
 
     return {

@@ -143,8 +143,8 @@ def classify(description: str) -> dict:
             "note": "If training compute > 10^25 FLOPs, systemic risk obligations (Art. 55) also apply.",
         }
 
-    if transparency_hits or gpai_result:
-        findings = transparency_hits
+    if transparency_hits:
+        findings = transparency_hits[:]
         if gpai_result:
             findings.append(gpai_result)
         return {
