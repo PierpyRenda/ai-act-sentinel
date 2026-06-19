@@ -251,6 +251,17 @@ Behavior by risk level:
 
 ---
 
+## Privacy
+
+AI Act Sentinel is designed to be **private by default**:
+
+- 🖥️ **Runs entirely on your machine** — it's a local MCP server. Your project documents and descriptions never leave your computer for processing.
+- 🔑 **No API keys required** — the classifier and report generator need no credentials and read no environment secrets.
+- 🚫 **No data collection, no telemetry** — nothing is logged to or sent to the author or any analytics service.
+- 🔗 **One optional external call** — only the `lookup_article` / `search_act` tools may contact the public [Ansvar Systems](https://github.com/Ansvar-Systems/EU_compliance_MCP) gateway (`gateway.ansvar.eu`) for live article text. Only the article ID or query *you* request is sent, from *your* machine. If the gateway is unavailable, it falls back to the bundled local knowledge base — so the tool works fully offline too.
+
+---
+
 ## Disclaimer
 
 AI Act Sentinel is an **automated compliance screening tool** for informational purposes only. It does not constitute legal advice. For deployment decisions involving high-risk AI systems, consult a qualified legal professional specializing in EU AI regulation.
