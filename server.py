@@ -28,7 +28,7 @@ TOOLS = [
     {
         "name": "analyze_pdf",
         "description": "Analyze a PDF project document against EU AI Act 2024/1689 (updated 2026). "
-                       "Returns risk level, violated articles, obligations, and remediation steps in Italian.",
+                       "Returns risk level, violated articles, obligations, and remediation steps in English.",
         "inputSchema": {
             "type": "object",
             "properties": {

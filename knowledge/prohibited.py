@@ -10,10 +10,10 @@ PROHIBITED_PRACTICES = [
         "article": "Art. 5(1)(a)",
         "name": "Subliminal or manipulative techniques",
         "description": "AI deploying subliminal techniques beyond consciousness or purposefully manipulative/deceptive techniques that materially distort behavior causing significant harm.",
-        "keywords": ["subliminal", "manipol", "deceptive", "inganno", "manipolazione", "comportamento", "distort", "behavior"],
+        "keywords": ["subliminal", "manipulat", "deceptive", "deception", "distort", "behavior"],
         "questions": [
-            "Il sistema usa tecniche che agiscono al di sotto della soglia di coscienza dell'utente?",
-            "Il sistema manipola deliberatamente il comportamento degli utenti causando danni significativi?",
+            "Does the system use techniques acting below the user's threshold of consciousness?",
+            "Does the system deliberately manipulate user behavior causing significant harm?",
         ],
     },
     {
@@ -21,10 +21,10 @@ PROHIBITED_PRACTICES = [
         "article": "Art. 5(1)(b)",
         "name": "Exploitation of vulnerabilities",
         "description": "AI exploiting vulnerabilities of specific groups (age, disability, socioeconomic status) to distort behavior causing harm.",
-        "keywords": ["vulnerab", "anzian", "disabil", "minori", "children", "elderly", "socioeconomic", "povert"],
+        "keywords": ["vulnerab", "disabil", "children", "elderly", "socioeconomic", "povert"],
         "questions": [
-            "Il sistema si rivolge specificamente a minori, anziani, disabili o persone in difficoltà economica?",
-            "Sfrutta caratteristiche di vulnerabilità per influenzare decisioni?",
+            "Does the system specifically target children, elderly, disabled persons, or those in economic hardship?",
+            "Does it exploit vulnerability characteristics to influence decisions?",
         ],
     },
     {
@@ -32,10 +32,10 @@ PROHIBITED_PRACTICES = [
         "article": "Art. 5(1)(c)",
         "name": "Social scoring",
         "description": "AI evaluating/classifying persons based on social behavior or personal traits causing detrimental or disproportionate treatment.",
-        "keywords": ["social scor", "punteggio social", "scoring", "classif", "comportamento social", "credit social", "reputazione"],
+        "keywords": ["social scor", "scoring", "classif", "social behavior", "social credit", "reputation"],
         "questions": [
-            "Il sistema assegna punteggi o classificazioni basate sul comportamento sociale?",
-            "Il trattamento risultante è in contesti non correlati o sproporzionato?",
+            "Does the system assign scores or classifications based on social behavior?",
+            "Is the resulting treatment in unrelated contexts or disproportionate?",
         ],
     },
     {
@@ -43,10 +43,10 @@ PROHIBITED_PRACTICES = [
         "article": "Art. 5(1)(d)",
         "name": "Criminal risk assessment (profiling only)",
         "description": "AI predicting criminal offense risk based SOLELY on profiling or personality traits (not objective criminal facts).",
-        "keywords": ["criminal", "crime predict", "recidiv", "criminale", "previsione reato", "profilag"],
+        "keywords": ["criminal", "crime predict", "recidiv", "crime forecast", "profiling"],
         "questions": [
-            "Il sistema valuta la probabilità che una persona commetta un reato?",
-            "La valutazione si basa esclusivamente su profiling o tratti della personalità senza fatti criminali oggettivi?",
+            "Does the system assess the likelihood that a person will commit a crime?",
+            "Is the assessment based solely on profiling or personality traits without objective criminal facts?",
         ],
     },
     {
@@ -54,10 +54,10 @@ PROHIBITED_PRACTICES = [
         "article": "Art. 5(1)(e)",
         "name": "Facial recognition database scraping",
         "description": "AI creating/expanding facial recognition databases through untargeted scraping from internet or CCTV.",
-        "keywords": ["facial recogn", "riconoscimento facciale", "scraping", "cctv", "database volti", "biometric database"],
+        "keywords": ["facial recogn", "scraping", "cctv", "face database", "biometric database"],
         "questions": [
-            "Il sistema raccoglie immagini di volti da internet o CCTV in modo non mirato?",
-            "Costruisce o espande database di riconoscimento facciale tramite scraping?",
+            "Does the system collect face images from the internet or CCTV in an untargeted manner?",
+            "Does it build or expand facial recognition databases through scraping?",
         ],
     },
     {
@@ -65,10 +65,10 @@ PROHIBITED_PRACTICES = [
         "article": "Art. 5(1)(f)",
         "name": "Emotion inference in workplace/education",
         "description": "AI inferring emotions in workplaces or educational institutions (except medical/safety purposes).",
-        "keywords": ["emotion recogn", "riconoscimento emozioni", "sentiment workplace", "emozioni lavoratori", "emozioni dipendenti", "rilevamento umore lavoratori", "inferire emozioni", "emotion detect"],
+        "keywords": ["emotion recogn", "sentiment workplace", "worker emotions", "employee emotions", "worker mood detection", "emotion inference", "emotion detect"],
         "questions": [
-            "Il sistema rileva o inferisce le emozioni di lavoratori o studenti?",
-            "L'uso è in contesto lavorativo o educativo (non medico/sicurezza)?",
+            "Does the system detect or infer emotions of workers or students?",
+            "Is the use in a workplace or educational context (not medical/safety)?",
         ],
     },
     {
@@ -76,9 +76,9 @@ PROHIBITED_PRACTICES = [
         "article": "Art. 5(1)(g)",
         "name": "Biometric categorization for sensitive attributes",
         "description": "AI categorizing persons from biometric data to infer race, political opinions, union membership, religion, sexual life/orientation.",
-        "keywords": ["biometric categ", "razza", "race", "opinione politica", "sindacato", "religione", "orientamento sessuale", "sexual orient"],
+        "keywords": ["biometric categ", "race", "political opinion", "union membership", "religion", "sexual orient"],
         "questions": [
-            "Il sistema categorizza persone in base a dati biometrici per dedurre attributi sensibili?",
+            "Does the system categorize persons based on biometric data to infer sensitive attributes?",
         ],
     },
     {
@@ -86,30 +86,30 @@ PROHIBITED_PRACTICES = [
         "article": "Art. 5(1)(h)",
         "name": "Real-time remote biometric identification in public spaces",
         "description": "Real-time biometric identification by law enforcement in publicly accessible spaces (narrow exceptions apply).",
-        "keywords": ["real-time biometric", "identificazione biometrica", "spazi pubblici", "law enforcement", "polizia", "riconoscimento in tempo reale"],
+        "keywords": ["real-time biometric", "biometric identification", "public spaces", "law enforcement", "police", "real-time recognition"],
         "questions": [
-            "Il sistema esegue identificazione biometrica in tempo reale in spazi pubblici?",
-            "È usato da forze dell'ordine senza autorizzazione giudiziaria?",
+            "Does the system perform real-time biometric identification in public spaces?",
+            "Is it used by law enforcement without judicial authorization?",
         ],
     },
     {
         "id": "omnibus_ncii",
-        "article": "Art. 5 — AI Omnibus (maggio 2026)",
+        "article": "Art. 5 — AI Omnibus (May 2026)",
         "name": "Non-consensual intimate content (NCII)",
         "description": "AI generating intimate images of real persons without consent.",
-        "keywords": ["deepfake intim", "nude", "nudi non consensual", "intimate content", "contenuto intimo"],
+        "keywords": ["deepfake intim", "nude", "non-consensual nude", "intimate content"],
         "questions": [
-            "Il sistema genera contenuti intimi di persone reali senza consenso?",
+            "Does the system generate intimate content of real persons without consent?",
         ],
     },
     {
         "id": "omnibus_csam",
-        "article": "Art. 5 — AI Omnibus (maggio 2026)",
+        "article": "Art. 5 — AI Omnibus (May 2026)",
         "name": "Child sexual abuse material (CSAM)",
         "description": "AI generating child sexual abuse material.",
-        "keywords": ["csam", "child abuse", "minori sessual", "pedopornografi"],
+        "keywords": ["csam", "child abuse", "child sexual", "child pornography"],
         "questions": [
-            "Il sistema può generare materiale sessuale che coinvolge minori?",
+            "Can the system generate sexual material involving minors?",
         ],
     },
 ]

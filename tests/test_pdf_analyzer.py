@@ -55,7 +55,7 @@ def test_analyze_pdf_mock_success():
 def test_analyze_pdf_mock_content_classified():
     """Description returned by analyze_pdf should contain AI-related content."""
     mock_page = MagicMock()
-    mock_page.get_text.return_value = "Machine learning algorithm for creditworthiness assessment of persone fisiche mutui bancari"
+    mock_page.get_text.return_value = "Machine learning algorithm for creditworthiness assessment of individuals for bank mortgages"
     mock_doc = MagicMock()
     mock_doc.__iter__ = MagicMock(return_value=iter([mock_page]))
     mock_doc.close = MagicMock()

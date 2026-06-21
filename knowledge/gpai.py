@@ -4,11 +4,11 @@ In force: 2 August 2025
 """
 
 GPAI_INDICATORS = [
-    "language model", "modello linguistico", "llm", "large language model",
-    "foundation model", "modello fondazionale", "generative ai", "ai generativa",
-    "text generation", "generazione testo", "image generation", "generazione immagini",
-    "multimodal", "multimodale", "base model", "modello base",
-    "training data", "dati di addestramento", "pre-training", "fine-tuning",
+    "language model", "llm", "large language model",
+    "foundation model", "generative ai",
+    "text generation", "image generation",
+    "multimodal", "base model",
+    "training data", "pre-training", "fine-tuning",
     "gpt", "claude", "gemini", "llama", "mistral", "falcon",
 ]
 

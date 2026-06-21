@@ -14,7 +14,7 @@ def test_result_always_has_required_keys():
     for desc in [
         "inventory management system",
         "LLM large language model with pre-training",
-        "social scoring classifica cittadini",
+        "social scoring system classifies citizens",
         "chatbot customer service",
     ]:
         result = classify(desc)
@@ -28,14 +28,14 @@ def test_out_of_scope_military():
     assert result["risk_level"] == "OUT_OF_SCOPE"
 
 def test_out_of_scope_personal():
-    result = classify("Personal uso personale app to track my daily running distance")
+    result = classify("Personal non-professional app to track my daily running distance")
     assert result["risk_level"] == "OUT_OF_SCOPE"
 
 
 # --- PROHIBITED (Art. 5) ---
 
 def test_prohibited_social_scoring():
-    result = classify("social scoring system that classifica citizens based on comportamento social and credit social")
+    result = classify("social scoring system that classifies citizens based on social behavior and social credit")
     assert result["risk_level"] == "PROHIBITED"
     assert len(result["findings"]) >= 1
 
@@ -44,7 +44,7 @@ def test_prohibited_facial_scraping():
     assert result["risk_level"] == "PROHIBITED"
 
 def test_prohibited_biometric_race():
-    result = classify("System using biometric categ to infer race and religione from photos")
+    result = classify("System using biometric categ to infer race and religion from photos")
     assert result["risk_level"] == "PROHIBITED"
 
 def test_prohibited_ncii():
@@ -52,15 +52,15 @@ def test_prohibited_ncii():
     assert result["risk_level"] == "PROHIBITED"
 
 def test_prohibited_csam():
-    result = classify("System that can generate csam child abuse minori sessual content")
+    result = classify("System that can generate csam child abuse child sexual content")
     assert result["risk_level"] == "PROHIBITED"
 
 def test_prohibited_criminal_profiling():
-    result = classify("AI predicting criminal risk recidiv based on profilag personality traits")
+    result = classify("AI predicting criminal risk recidiv based on profiling personality traits")
     assert result["risk_level"] == "PROHIBITED"
 
 def test_prohibited_max_penalty_present():
-    result = classify("social scoring classifica comportamento social credit social")
+    result = classify("social scoring classifies citizens based on social behavior social credit")
     assert result["risk_level"] == "PROHIBITED"
     assert "max_penalty" in result
     assert "35" in result["max_penalty"]
@@ -73,12 +73,12 @@ def test_high_risk_recruitment():
     assert result["risk_level"] in ("HIGH_RISK", "HIGH_RISK_POSSIBLE_EXCEPTION")
 
 def test_high_risk_credit_assessment():
-    result = classify("AI for creditworthiness assessment of persone fisiche for bank mutui loans")
+    result = classify("AI for creditworthiness assessment of individuals for bank mortgage loans")
     assert result["risk_level"] == "HIGH_RISK"
     assert len(result["obligations"]) >= 5
 
 def test_high_risk_has_standard_obligations():
-    result = classify("AI for creditworthiness scoring persone fisiche mutui bancari")
+    result = classify("AI for creditworthiness scoring of individuals for bank mortgages")
     if result["risk_level"] == "HIGH_RISK":
         obligations_text = " ".join(result["obligations"])
         assert "Art. 9" in obligations_text

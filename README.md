@@ -8,7 +8,7 @@
 [![MCP](https://img.shields.io/badge/MCP-compatible-orange)](https://modelcontextprotocol.io)
 [![Last Updated](https://img.shields.io/badge/Updated-June%202026-brightgreen)](https://github.com/PierpyRenda/ai-act-sentinel)
 
-Pass a PDF project document or plain text description — get back a structured Italian compliance report: **risk level, violated articles, operator obligations, and remediation steps**.
+Pass a PDF project document or plain text description — get back a structured English compliance report: **risk level, violated articles, operator obligations, and remediation steps**.
 
 ---
 
@@ -34,7 +34,7 @@ AI Act Sentinel runs **locally as an MCP server**, integrates directly with Clau
 - 📄 **PDF project analysis** — extract text from any project document and run full compliance check
 - 👤 **Role-aware reports** — obligations differ by role (provider, deployer, importer, distributor…)
 - 🔗 **Ansvar integration** — optional live article lookup via [Ansvar Systems EU Compliance MCP](https://github.com/Ansvar-Systems/EU_compliance_MCP) gateway
-- 🇮🇹 **Italian reports** — structured output in Italian with article citations and remediation steps
+- 🇬🇧 **English reports** — structured output in English with article citations and remediation steps
 
 ---
 
@@ -71,7 +71,7 @@ AI Act Sentinel runs **locally as an MCP server**, integrates directly with Clau
 |------|-------------|
 | `analyze_pdf` | Analyze a PDF project document — full compliance pipeline |
 | `classify_text` | Classify any text description against the Act |
-| `generate_report` | Generate full Italian compliance report |
+| `generate_report` | Generate full compliance report |
 | `lookup_article` | Fetch article text from Ansvar gateway |
 | `search_act` | Full-text search across EU AI Act |
 | `get_obligations` | Get obligations by operator role |
@@ -117,7 +117,7 @@ analyze_pdf(pdf_path="/path/to/your/project.pdf")
 
 ```
 classify_text(
-  description="Sistema di recruitment AI con filtraggio automatico CV e ranking candidati",
+  description="AI recruitment system with automated CV filtering and candidate ranking",
   generate_full_report=True
 )
 ```
@@ -130,7 +130,7 @@ python3 -c "
 from tools.classifier import classify
 from tools.reporter import generate_report
 
-desc = 'Sistema AI per valutare creditworthiness di persone fisiche per mutui bancari'
+desc = 'AI system for creditworthiness assessment of individuals for bank mortgages'
 result = classify(desc)
 print(generate_report(result, source='test'))
 "
@@ -140,28 +140,28 @@ print(generate_report(result, source='test'))
 
 ```
 ======================================================================
-AI ACT SENTINEL — RAPPORTO DI CONFORMITÀ
-Data analisi: 2026-06-18
-Fonte: test
+AI ACT SENTINEL — COMPLIANCE REPORT
+Analysis date: 2026-06-18
+Source: test
 ======================================================================
 
-LIVELLO DI RISCHIO: 🟠 ALTO RISCHIO (Annex III / Art. 6)
+RISK LEVEL: 🟠 HIGH RISK (Annex III / Art. 6)
 
-DESCRIZIONE: Il sistema AI rientra nelle categorie ad alto rischio.
-Sono obbligatori requisiti completi del Capitolo III.
+DESCRIPTION: The AI system falls under high-risk categories.
+Full Chapter III requirements are mandatory.
 
-SINTESI: System matches 1 Annex III high-risk category.
+SUMMARY: System matches 1 Annex III high-risk category.
 
-SANZIONE MASSIMA: €15.000.000 o 3% del fatturato mondiale annuo
+MAXIMUM PENALTY: €15,000,000 or 3% of worldwide annual turnover
 
-ARTICOLI POTENZIALMENTE VIOLATI:
+POTENTIALLY VIOLATED ARTICLES:
   • Annex III(5)
 
-PROBLEMI RILEVATI:
+ISSUES DETECTED:
   1. 5. Essential Public & Private Services (Annex III(5))
-     Keywords trovate: creditworthiness, persone fisiche, mutui
+     Keywords matched: creditworthiness, individuals, bank mortgages
 
-OBBLIGHI APPLICABILI:
+APPLICABLE OBLIGATIONS:
   ✓ Art. 9 — Risk management system
   ✓ Art. 10 — Data governance
   ✓ Art. 11 — Technical documentation
@@ -169,11 +169,11 @@ OBBLIGHI APPLICABILI:
   ✓ Art. 49 — EU database registration
   ...
 
-RACCOMANDAZIONI:
-  1. Implementare un sistema di gestione del rischio (Art. 9)
-  2. Predisporre documentazione tecnica completa (Art. 11)
-  3. Effettuare valutazione di conformità (Art. 43)
-  4. Registrarsi nel database UE (Art. 49) prima del deployment
+RECOMMENDATIONS:
+  1. Implement a risk management system (Art. 9)
+  2. Prepare complete technical documentation (Art. 11)
+  3. Carry out conformity assessment (Art. 43)
+  4. Register in EU database (Art. 49) before deployment
 ```
 
 ---
@@ -192,7 +192,7 @@ ai-act-sentinel/
 │   └── sanctions.py             # Art. 99-101 sanction tiers
 ├── tools/
 │   ├── classifier.py            # 6-question decision tree (Q1→Q6)
-│   ├── reporter.py              # Italian report generator
+│   ├── reporter.py              # English report generator
 │   ├── pdf_analyzer.py          # PDF text extraction (PyMuPDF)
 │   └── ansvar.py                # HTTP client → gateway.ansvar.eu/mcp
 └── requirements.txt

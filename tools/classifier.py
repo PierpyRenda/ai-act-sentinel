@@ -13,8 +13,8 @@ from knowledge.gpai import GPAI_INDICATORS, GPAI_UNIVERSAL_OBLIGATIONS, SYSTEMIC
 
 
 EXCLUDED_CONTEXTS = [
-    "military", "militare", "national security", "sicurezza nazionale",
-    "personal non-professional", "uso personale", "research pre-commercial", "ricerca pre-commerciale",
+    "military", "national security",
+    "personal non-professional", "personal use", "research pre-commercial",
 ]
 
 
@@ -81,7 +81,7 @@ def classify(description: str) -> dict:
             violated_articles.append(category["article"])
 
     if annex3_hits:
-        if exception_matches and not _keyword_match(text, ["profiling", "profilag"]):
+        if exception_matches and not _keyword_match(text, ["profiling"]):
             findings.append({
                 "type": "potential_annex3_exception",
                 "note": f"Annex III match found BUT exception keywords present ({exception_matches}). "
@@ -106,8 +106,8 @@ def classify(description: str) -> dict:
         }
 
     # Q4 — Art. 6(1) Annex I safety component (keyword heuristic)
-    annex1_keywords = ["safety component", "componente di sicurezza", "ce marking", "marcatura ce",
-                       "machinery regulation", "medical device", "dispositivo medico", "aeronautica", "aviation"]
+    annex1_keywords = ["safety component", "ce marking",
+                       "machinery regulation", "medical device", "aviation"]
     annex1_matches = _keyword_match(text, annex1_keywords)
     if annex1_matches:
         return {

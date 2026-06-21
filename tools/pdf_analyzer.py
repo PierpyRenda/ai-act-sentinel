@@ -36,30 +36,18 @@ def extract_ai_system_description(text: str) -> str:
     Returns the full text if no sections found.
     """
     section_triggers = [
-        "sistema di intelligenza artificiale",
-        "sistema ai",
         "ai system",
         "artificial intelligence system",
         "machine learning",
-        "algoritmo",
         "algorithm",
-        "modello",
         "model",
-        "automazione",
         "automation",
-        "analisi predittiva",
         "predictive analysis",
-        "classificazione",
         "classification",
-        "riconoscimento",
         "recognition",
-        "descrizione del progetto",
         "project description",
-        "obiettivi",
         "objectives",
-        "funzionalità",
         "features",
-        "architettura tecnica",
         "technical architecture",
     ]
 

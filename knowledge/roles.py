@@ -84,13 +84,13 @@ def detect_role_from_description(description: str) -> list[str]:
     text = description.lower()
     roles = []
 
-    if any(k in text for k in ["sviluppo", "develop", "build", "creo", "create", "training", "addestro", "deploy proprio"]):
+    if any(k in text for k in ["develop", "build", "create", "training", "deploy own"]):
         roles.append("provider")
 
-    if any(k in text for k in ["uso", "use", "implemento", "implement", "deploy", "applico", "apply", "utilizzo"]):
+    if any(k in text for k in ["use", "implement", "deploy", "apply"]):
         roles.append("deployer")
 
-    if any(k in text for k in ["importo", "import", "terzo paese", "third country", "distribuzione", "distribution"]):
+    if any(k in text for k in ["import", "third country", "distribution"]):
         roles.append("importer")
 
     if not roles:
